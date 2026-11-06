@@ -1,0 +1,11 @@
+{
+  "sourceRepository": "https://github.com/joshuazang/IM-style-editor",
+  "sourceCommit": "7e063e3e028f050fa37b09092b5982619d0c5197",
+  "sharedFiles": {
+    "src/note-format.js": "68c92851e27b251b5cac1d831c3e7f66de988d0ab78932ffa593095d0176dcaa",
+    "src/message-transfer.js": "15cbd1f9be18bc309d49ba407a4085edd34b06904fb80c2e06e6e1891d930160",
+    "src/note-storage.js": "c4ac1d43f994d48a6517abdc0953bebda31211a7e591a6f89cb8847161f2f340",
+    "src/host-bridge.js": "1b223451922470b59b533cbc461caeb56f777b2291d49e2d89e643b8a82e85f5",
+    "src/clipboard.js": "58d45f16eaad98920a52ec6553bee537e679724bf839c095cfca1521c29aa464"
+  }
+}
