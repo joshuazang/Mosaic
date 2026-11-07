@@ -1,28 +1,30 @@
 # Source and attribution
 
-Mosaic is a standalone Standard Notes editor by the IM-style-editor project author.
-Copyright (c) 2026 joshuazang. No separate license grant is made by publishing
-this source repository, consistent with the existing IM-style-editor repository.
+Copyright (c) 2026 joshuazang. Publishing this source does not make a separate
+license grant, consistent with the IM-style-editor project.
 
-The shared format-3 reader/writer, acknowledged save queue, lean reply helpers,
-clipboard helpers and message-transfer code come from
-[IM-style-editor](https://github.com/joshuazang/IM-style-editor), revision
-`7e063e3e028f050fa37b09092b5982619d0c5197`. File checksums are recorded in
-`docs/shared-core.json`. The format, queue and transfer files are unmodified.
+Mosaic's board UI, layout model, CSS and SVG controls were written for this project.
+OpenKeep was a visual layout reference; no OpenKeep application code, assets,
+analytics, storage layer or dependencies are included.
 
-`src/relay.js` is Mosaic's small, readable implementation of the public Standard
-Notes component protocol, informed by the established
-[Standard Notes component-relay](https://github.com/standardnotes/component-relay)
-implementation and the existing IM editor's host integration. It supports only
-the integration Mosaic uses, with origin binding, parent-window checks, session
-keys, random message IDs and mobile JSON transport. The full implementation is
-included in readable source; no compiled SDK, UUID library, remote theme loader
-or third-party JavaScript runtime is bundled.
+The format-3 parser/writer, save queue, transfer, clipboard, host metadata and
+reply helpers live in `shared/core` in
+https://github.com/joshuazang/IM-style-editor. Both modern interfaces compile the
+same sources into their own release. `editors-release.json` records the exact
+core fingerprint; neither interface fetches a shared runtime remotely.
 
-The new board UI, layout model, CSS and SVG UI artwork are original Mosaic code.
-OpenKeep was a visual reference; no OpenKeep application code, storage layer,
-cloud integration, analytics, assets or dependencies are included.
+The original Mosaic 1.0.0 used the project's IM 4.1.5 core at revision
+7e063e3e028f050fa37b09092b5982619d0c5197. That historical release remains at
+https://github.com/joshuazang/Mosaic/releases/tag/v1.0.0.
 
-The complete application source is in the public GitHub repository, including its
-release tag. `python3 tools/build.py` reproduces the release without downloading
-dependencies.
+`mosaic/src/relay.js` implements the public Standard Notes component protocol,
+informed by https://github.com/standardnotes/component-relay and the established
+IM host integration. It binds the parent origin/session and supports the mobile
+JSON transport. Mosaic bundles no compiled SDK or third-party JavaScript runtime.
+
+The IM interface retains its existing React and Standard Notes SDK build. Moving
+both projects here does not mean that every IM runtime dependency was authored
+from scratch. Archive's sources and runtime are intentionally independent.
+
+Build both current interfaces with `python3 tools/package-editors.py`. No runtime
+dependency download is needed for that command.
